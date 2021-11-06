@@ -1,10 +1,9 @@
 defmodule ListLength do
-  def call(list) do
-    if length(list) > 0 do
-    [ _ | tail] = list
-      1 + ListLength.call(tail)
-    else
-      0
-    end
+  def call([]) do
+    0
+  end
+
+  def call([head | tail]) do
+    1 + ListLength.call(tail)
   end
 end
